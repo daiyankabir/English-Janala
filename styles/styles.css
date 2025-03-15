@@ -29,6 +29,10 @@ html {
     background-color: rgb(66, 42, 213);
    color: white;
 }
+.btn-nav-hover{
+    background-color: rgb(66, 42, 213);
+    color: white;
+}
 
 .input-field{
     border: 1px solid rgba(24, 24, 27, 0.2);

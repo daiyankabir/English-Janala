@@ -85,7 +85,16 @@ async function courses() {
         lessonButton.classList.add("flex", "justify-center", "items-center", "gap-2", "font-bold", "btn-nav");
 
 
-        lessonButton.addEventListener('click', () => {
+        lessonButton.addEventListener("click", function () {
+
+            lessonButton.classList.add("btn-nav-hover");
+            const allButtons = document.querySelectorAll("button");
+            allButtons.forEach((button) => {
+                if (button !== lessonButton) {
+                    button.classList.remove("btn-nav-hover");
+                }
+            });
+
             getLesson(lesson.level_no);
         });
 
@@ -108,6 +117,9 @@ async function getLesson(lessonNo) {
 
         lessonGrid.innerHTML = '';
         for (const lesson of data.data) {
+            if (lesson.meaning === null || lesson.meaning === "") {
+                lesson.meaning = "Not Available";
+            }
             const lessonItem = document.createElement("div");
             lessonItem.classList.add("bg-white", "p-16", "rounded-lg", "flex", "flex-col", "justify-center", "items-center", "space-y-12");
             const lessonDetails = document.createElement("div");
@@ -119,14 +131,34 @@ async function getLesson(lessonNo) {
             `;
             const actionButtons = document.createElement("div");
             actionButtons.classList.add("flex", "justify-between", "items-center", "w-full");
-            actionButtons.innerHTML = `
-                <a href="http://" class="bg-blue-100 p-4 rounded-lg">
-                    <i class="fa-solid fa-circle-exclamation"></i>
-                </a>
-                <a href="http://" class="bg-blue-200 p-4 rounded-lg">
-                    <i class="fa-solid fa-volume-high"></i>
-                </a>
-            `;
+
+            const detailsLink = document.createElement("a");
+            detailsLink.id = "details";
+            detailsLink.href = "#"; // You can set the desired href
+            detailsLink.classList.add("bg-blue-100", "px-4", "py-2", "rounded-lg");
+
+            // Create the icon for the details link
+            const detailsIcon = document.createElement("i");
+            detailsIcon.classList.add("fa-solid", "fa-circle-exclamation");
+
+            // Append the icon to the details link
+            detailsLink.appendChild(detailsIcon);
+
+            // Create the second link element with class "bg-blue-200"
+            const volumeLink = document.createElement("a");
+            volumeLink.href = "#"; // You can set the desired href
+            volumeLink.classList.add("bg-blue-200", "px-4", "py-2", "rounded-lg");
+
+            // Create the icon for the volume link
+            const volumeIcon = document.createElement("i");
+            volumeIcon.classList.add("fa-solid", "fa-volume-high");
+
+            // Append the icon to the volume link
+            volumeLink.appendChild(volumeIcon);
+
+            // Append the links to the actionButtons container
+            actionButtons.appendChild(detailsLink);
+            actionButtons.appendChild(volumeLink);
 
             lessonItem.appendChild(lessonDetails);
             lessonItem.appendChild(actionButtons);
@@ -134,6 +166,11 @@ async function getLesson(lessonNo) {
 
             lessonGrid.appendChild(lessonItem);
         }
+    }
+    else {
+        lessonContent.style.display = "flex";
+        lessonGrid.style.display = "none";
+        lessonContent.innerHTML = `<img src="../English-Janala/assets/alert-error.png" alt="" srcset=""><h1 class="text-xl font-bold">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</h1><h1 class="text-4xl font-bold">নেক্সট Lesson এ যান</h1>`;
     }
 }
 
