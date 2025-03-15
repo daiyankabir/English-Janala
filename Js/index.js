@@ -115,8 +115,12 @@ async function getLesson(lessonNo) {
     if (data.data.length > 0) {
         lessonContent.style.display = "none";
         lessonGrid.style.display = "grid";
+        document.getElementById("loader").style.display = "none";
+
 
         lessonGrid.innerHTML = '';
+
+
         for (const lesson of data.data) {
             if (lesson.meaning === null || lesson.meaning === "") {
                 lesson.meaning = "Not Available";
@@ -184,9 +188,7 @@ async function getDetails(level_id) {
     const response = await fetch(`https://openapi.programming-hero.com/api/word/${level_id}`);
     const data = await response.json();
     const lessonDetails = data.data;
-    if (lessonDetails.synonyms === null || lessonDetails.synonyms.length === 0) {
-        lessonDetails.synonyms = "Not Available";
-    }
+
     if (lessonDetails.sentence === null || lessonDetails.sentence === "") {
         lessonDetails.sentence = "Not Available";
     }
@@ -196,7 +198,10 @@ async function getDetails(level_id) {
     document.querySelector("#modal h2").textContent = lessonDetails.word + " ( " + lessonDetails.pronunciation + " ) ";
     document.querySelector("#modal .meaning").textContent = lessonDetails.meaning;
     document.querySelector("#modal .example").textContent = lessonDetails.sentence;
-    document.querySelector("#modal .synonyms").textContent = lessonDetails.synonyms.join(", ");
+    document.querySelector("#modal .synonyms").textContent =
+        Array.isArray(lessonDetails.synonyms) && lessonDetails.synonyms.length > 0
+            ? lessonDetails.synonyms.join(", ")
+            : "Not Available";
     modal.classList.remove("hidden");
 
 
