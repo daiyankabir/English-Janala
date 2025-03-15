@@ -35,7 +35,7 @@
         </nav>
     </header>
     <!-- Hero Section -->
-    <section class="flex justify-between items-center py-4 px-16">
+    <section class="flex justify-between items-center py-4 px-16 mt-16">
         <div class="hero-text space-y-8">
             <h1 class="text-4xl font-bold"><span class="text-blue-400">English</span> is Easy!!</h1>
             <p class="text-lg">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা<br> আপনার দক্ষতা বাড়াতে
@@ -56,13 +56,106 @@
 
     </section>
     <!-- Courses section -->
-    <section>
+    <section class="flex flex-col space-y-12 justify-center items-center mt-16 py-4 px-16">
+        <h1 class="text-4xl font-bold">
+            <span class="text-blue-400">Let's</span> Learn Vocabularies
+        </h1>
+        <div class="flex space-x-4">
+            <button type="submit" class="flex justify-center items-center gap-2 font-bold btn-nav">
+                <i class="fa-solid fa-book-open"></i> Lesson-1
+            </button>
+            <button type="submit" class="flex justify-center items-center gap-2 font-bold btn-nav">
+                <i class="fa-solid fa-book-open"></i> Lesson-2
+            </button>
+            <button type="submit" class="flex justify-center items-center gap-2 font-bold btn-nav">
+                <i class="fa-solid fa-book-open"></i> Lesson-3
+            </button>
+            <button type="submit" class="flex justify-center items-center gap-2 font-bold btn-nav">
+                <i class="fa-solid fa-book-open"></i> Lesson-4
+            </button>
+            <button type="submit" class="flex justify-center items-center gap-2 font-bold btn-nav">
+                <i class="fa-solid fa-book-open"></i> Lesson-5
+            </button>
+            <button type="submit" class="flex justify-center items-center gap-2 font-bold btn-nav">
+                <i class="fa-solid fa-book-open"></i> Lesson-6
+            </button>
+            <button type="submit" class="flex justify-center items-center gap-2 font-bold btn-nav">
+                <i class="fa-solid fa-book-open"></i> Lesson-7
+            </button>
+        </div>
+        <div id="lessons"
+            class="bg-gray-200 p-4 w-full h-auto rounded-lg flex flex-col justify-center items-center space-y-8 py-12">
+            <h1>আপনি এখনো কোন Lesson Select করেন ন</h1>
+            <h1 class="text-4xl">একটি Lesson Select করুন।</h1>
 
+        </div>
     </section>
 
     <!-- Questions Section -->
-    <section>
+    <section class="flex flex-col space-y-12 justify-center items-center mt-16 py-4 px-16">
+        <h1 class="text-4xl font-bold">
+            <span class="text-blue-400">Frequently</span> Asked Questions
+        </h1>
+        <div class="mt-6 space-y-4 w-full">
+            <!-- FAQ Items -->
+            <div class="faq-item bg-gray-100 rounded-lg p-4 cursor-pointer">
+                <div class="flex justify-between items-center">
+                    <span class="font-semibold">1. The difference between var, let, and const?</span>
+                    <span class="icon text-xl">+</span>
+                </div>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                    <p class="mt-2 text-gray-600">var: Old, function-scoped, can be re-declared (avoid using it).<br>
+                        let: Block-scoped, can be updated but not re-declared.<br>
+                        const: Block-scoped, cannot be re-assigned.</p>
+                </div>
+            </div>
 
+            <div class="faq-item bg-gray-100 rounded-lg p-4 cursor-pointer">
+                <div class="flex justify-between items-center">
+                    <span class="font-semibold">2. The difference between map(), forEach(), and filter()?</span>
+                    <span class="icon text-xl ">+</span>
+                </div>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                    <p class="mt-2 text-gray-600">forEach() → Just loops through an array, doesn't return anything.<br>
+                        map() → Transforms each item and returns a new array.<br>
+                        filter() → Returns a new array with items that match a condition.</p>
+                </div>
+            </div>
+
+            <div class="faq-item bg-gray-100 rounded-lg p-4 cursor-pointer">
+                <div class="flex justify-between items-center">
+                    <span class="font-semibold">3. Explain arrow functions and how they are different from regular
+                        functions?</span>
+                    <span class="icon text-xl">+</span>
+                </div>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                    <p class="mt-2 text-gray-600">Arrow Functions (=>) are shorter and don’t have their own this.<br>
+                        Regular Functions work best when using this inside objects.</p>
+                </div>
+            </div>
+
+            <div class="faq-item bg-gray-100 rounded-lg p-4 cursor-pointer">
+                <div class="flex justify-between items-center">
+                    <span class="font-semibold">4. How JavaScript Promises work?</span>
+                    <span class="icon text-xl ">+</span>
+                </div>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                    <p class="mt-2 text-gray-600">A Promise is like a guarantee that you'll get a value later.<br>
+                        It can be Pending → Resolved (then) → Rejected (catch).</p>
+                </div>
+            </div>
+
+            <div class="faq-item bg-gray-100 rounded-lg p-4 cursor-pointer">
+                <div class="flex justify-between items-center">
+                    <span class="font-semibold">5. How closures work in JavaScript?</span>
+                    <span class="icon text-xl ">+</span>
+                </div>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                    <p class="mt-2 text-gray-600">A closure is when a function remembers variables from its parent, even
+                        after the parent is gone.</p>
+                </div>
+            </div>
+        </div>
     </section>
     <!-- Footer -->
     <footer>
