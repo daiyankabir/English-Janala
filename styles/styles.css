@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+html {
+    scroll-behavior: smooth;
+}
 .font-family {
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
@@ -8,8 +11,9 @@
 
 .nav-container{
     border: 1px solid rgb(198, 189, 189);
-    background: linear-gradient(178deg, rgba(131, 127, 127, 0.3), rgba(0, 0, 0, 0));
+    /* background: linear-gradient(178deg, rgba(131, 127, 127, 0.3), rgba(0, 0, 0, 0)); */
     /* background: linear-gradient(to bottom, red, blue); */
+    background-color: white;
 
 }
 
@@ -41,4 +45,7 @@ border-radius: 4px;
 background: rgb(66, 42, 213);
 padding: 8px 16px;
 color: white;
+}
+.footer-container{
+    border-top: 3px solid rgb(255, 235, 235);
 }

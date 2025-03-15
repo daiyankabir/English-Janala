@@ -14,19 +14,26 @@
 <body class="font-family">
     <!-- Nav Part -->
     <header>
-        <nav id="navContainer" class="nav-container flex justify-between items-center py-4 px-16">
+        <nav id="navContainer"
+            class="fixed top-0 left-0 w-full mb-16 nav-container flex justify-between items-center py-4 px-16">
             <div class="flex items-center">
                 <h1 class="font-bold">English</h1>
                 <img src="../English-Janala/assets/logo.png" alt="" srcset="">
                 <h1 class="font-bold">জানালা</h1>
             </div>
             <div class="flex justify-between items-center space-x-4">
-                <button type="submit" class="flex justify-center items-center gap-2 font-bold btn-nav">
-                    <i class="fa-solid fa-circle-question"></i> FAQ
-                </button>
-                <button type="submit" class="flex justify-center items-center gap-2 font-bold btn-nav">
-                    <i class="fa-solid fa-book-open"></i> Learn
-                </button>
+                <a href="#faq">
+                    <button type="submit" class="flex justify-center items-center gap-2 font-bold btn-nav">
+                        <i class="fa-solid fa-circle-question"></i> FAQ
+                    </button>
+                </a>
+
+                <a href="#courses">
+                    <button type="submit" class="flex justify-center items-center gap-2 font-bold btn-nav">
+                        <i class="fa-solid fa-book-open"></i> Learn
+                    </button>
+                </a>
+
                 <button type="submit" class="flex justify-center items-center gap-2 font-bold btn-nav">
                     <i class="fa-solid fa-arrow-right-from-bracket"></i>Logout
                 </button>
@@ -56,7 +63,7 @@
 
     </section>
     <!-- Courses section -->
-    <section class="flex flex-col space-y-12 justify-center items-center mt-16 py-4 px-16">
+    <section id="courses" class="flex flex-col space-y-12 justify-center items-center mt-16 py-4 px-16">
         <h1 class="text-4xl font-bold">
             <span class="text-blue-400">Let's</span> Learn Vocabularies
         </h1>
@@ -92,7 +99,7 @@
     </section>
 
     <!-- Questions Section -->
-    <section class="flex flex-col space-y-12 justify-center items-center mt-16 py-4 px-16">
+    <section id="faq" class="flex flex-col space-y-12 justify-center items-center mt-16 mb-16 py-4 px-16">
         <h1 class="text-4xl font-bold">
             <span class="text-blue-400">Frequently</span> Asked Questions
         </h1>
@@ -158,7 +165,36 @@
         </div>
     </section>
     <!-- Footer -->
-    <footer>
+    <footer class="footer-container flex space-y-12 justify-between items-center mt-16 p-16">
+        <div class="flex flex-col space-y-4">
+            <div class="flex items-center">
+                <h1 class="font-bold">English</h1>
+                <img src="../English-Janala/assets/logo.png" alt="" srcset="">
+                <h1 class="font-bold">জানালা</h1>
+            </div>
+            <div class="space-y-2">
+                <h1 class="font-bold">ইংরেজি শিখুন সহজে</h1>
+                <p>Providing ED-Tech Applications since 2025</p>
+            </div>
+
+        </div>
+        <div>
+            <h1>Follow us</h1>
+            <div class="flex space-x-4">
+                <a href="https://www.facebook.com" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://www.youtube.com" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://www.instagram.com" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.github.com" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
 
     </footer>
     <script src="Js/index.js"></script>
