@@ -29,6 +29,7 @@ const coursesContainer = document.getElementById("coursesContainer");
 const faqContainer = document.getElementById("faqContainer");
 const nameInput = document.querySelector('input[type="text"]');
 const passwordInput = document.querySelector('input[type="password"]');
+const modal = document.getElementById("modal");
 
 navContainer.style.display = "none";
 coursesContainer.style.display = "none";
@@ -166,7 +167,8 @@ async function getLesson(lessonNo) {
 
             lessonGrid.appendChild(lessonItem);
 
-            detailsLink.addEventListener("click", function () {
+            detailsLink.addEventListener("click", function (event) {
+                event.preventDefault();
                 getDetails(lesson.id);
             });
         }
@@ -181,8 +183,17 @@ async function getLesson(lessonNo) {
 async function getDetails(level_id) {
     const response = await fetch(`https://openapi.programming-hero.com/api/word/${level_id}`);
     const data = await response.json();
-    console.log(data.data);
+    const lessonDetails = data.data;
+    document.querySelector("#modal h2").textContent = lessonDetails.word + " ( " + lessonDetails.pronunciation + " ) ";
+    document.querySelector("#modal .meaning").textContent = lessonDetails.meaning;
+    document.querySelector("#modal .example").textContent = lessonDetails.sentence;
+    document.querySelector("#modal .synonyms").textContent = lessonDetails.synonyms.join(", ");
+    modal.classList.remove("hidden");
 
+
+    document.getElementById("closeModal").addEventListener("click", function () {
+        document.getElementById("modal").classList.add("hidden");
+    });
 }
 
 

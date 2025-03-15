@@ -53,3 +53,21 @@ color: white;
 .footer-container{
     border-top: 3px solid rgb(255, 235, 235);
 }
+
+.btn-modal{
+    box-sizing: border-box;
+    border: 1px solid rgb(61, 38, 199);
+    border-radius: 4px;
+    
+    background: rgb(66, 42, 213);
+    padding: 8px 16px;
+    color: white;
+}
+
+.modal-content{
+    box-sizing: border-box;
+border: 2px solid rgb(237, 247, 255);
+border-radius: 12px;
+
+background: rgb(255, 255, 255);
+}
