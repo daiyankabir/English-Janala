@@ -184,6 +184,15 @@ async function getDetails(level_id) {
     const response = await fetch(`https://openapi.programming-hero.com/api/word/${level_id}`);
     const data = await response.json();
     const lessonDetails = data.data;
+    if (lessonDetails.synonyms === null || lessonDetails.synonyms.length === 0) {
+        lessonDetails.synonyms = "Not Available";
+    }
+    if (lessonDetails.sentence === null || lessonDetails.sentence === "") {
+        lessonDetails.sentence = "Not Available";
+    }
+    if (lessonDetails.meaning === null || lessonDetails.meaning === "") {
+        lessonDetails.meaning = "Not Available";
+    }
     document.querySelector("#modal h2").textContent = lessonDetails.word + " ( " + lessonDetails.pronunciation + " ) ";
     document.querySelector("#modal .meaning").textContent = lessonDetails.meaning;
     document.querySelector("#modal .example").textContent = lessonDetails.sentence;
