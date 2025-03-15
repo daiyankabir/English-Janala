@@ -165,6 +165,10 @@ async function getLesson(lessonNo) {
 
 
             lessonGrid.appendChild(lessonItem);
+
+            detailsLink.addEventListener("click", function () {
+                getDetails(lesson.id);
+            });
         }
     }
     else {
@@ -172,6 +176,13 @@ async function getLesson(lessonNo) {
         lessonGrid.style.display = "none";
         lessonContent.innerHTML = `<img src="../English-Janala/assets/alert-error.png" alt="" srcset=""><h1 class="text-xl font-bold">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</h1><h1 class="text-4xl font-bold">নেক্সট Lesson এ যান</h1>`;
     }
+}
+
+async function getDetails(level_id) {
+    const response = await fetch(`https://openapi.programming-hero.com/api/word/${level_id}`);
+    const data = await response.json();
+    console.log(data.data);
+
 }
 
 
