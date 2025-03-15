@@ -16,25 +16,29 @@
     <header>
         <nav id="navContainer"
             class="fixed top-0 left-0 w-full mb-16 nav-container flex justify-between items-center py-4 px-16">
-            <div class="flex items-center">
-                <h1 class="font-bold">English</h1>
-                <img src="../English-Janala/assets/logo.png" alt="" srcset="">
-                <h1 class="font-bold">জানালা</h1>
-            </div>
+            <a href="#">
+                <div class="flex items-center">
+                    <h1 class="font-bold">English</h1>
+                    <img src="../English-Janala/assets/logo.png" alt="" srcset="">
+                    <h1 class="font-bold">জানালা</h1>
+                </div>
+            </a>
+
             <div class="flex justify-between items-center space-x-4">
-                <a href="#faq">
+                <a href="#faqContainer">
                     <button type="submit" class="flex justify-center items-center gap-2 font-bold btn-nav">
                         <i class="fa-solid fa-circle-question"></i> FAQ
                     </button>
                 </a>
 
-                <a href="#courses">
+                <a href="#coursesContainer">
                     <button type="submit" class="flex justify-center items-center gap-2 font-bold btn-nav">
                         <i class="fa-solid fa-book-open"></i> Learn
                     </button>
                 </a>
 
-                <button type="submit" class="flex justify-center items-center gap-2 font-bold btn-nav">
+                <button onclick="handleLogout()" type="submit"
+                    class="flex justify-center items-center gap-2 font-bold btn-nav">
                     <i class="fa-solid fa-arrow-right-from-bracket"></i>Logout
                 </button>
             </div>
@@ -48,12 +52,13 @@
             <p class="text-lg">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা<br> আপনার দক্ষতা বাড়াতে
                 চান, আমাদের Interactive Lessons আপনাকে নিয়ে <br>যাবে অন্য একটি Level এ</p>
             <div class="flex flex-col space-y-4">
-                <input type="text" name="" id="" placeholder="Enter your Name" class="input-field">
+                <input type="text" name="" id="username" placeholder="Enter your Name" class="input-field">
 
-                <input type="password" name="" id="" placeholder="Password" class="input-field">
+                <input type="password" name="" id="password" placeholder="Password" class="input-field">
             </div>
 
-            <button id="btn-started" type="submit" class="flex justify-center items-center gap-2">
+            <button onclick="handleLogin()" id="btn-started" type="submit"
+                class="flex justify-center items-center gap-2">
                 Get Started
             </button>
         </div>
@@ -63,43 +68,43 @@
 
     </section>
     <!-- Courses section -->
-    <section id="courses" class="flex flex-col space-y-12 justify-center items-center mt-16 py-4 px-16">
+    <section id="coursesContainer" class="flex flex-col space-y-12 justify-center items-center mt-16 py-4 px-16">
         <h1 class="text-4xl font-bold">
             <span class="text-blue-400">Let's</span> Learn Vocabularies
         </h1>
-        <div class="flex space-x-4">
-            <button type="submit" class="flex justify-center items-center gap-2 font-bold btn-nav">
-                <i class="fa-solid fa-book-open"></i> Lesson-1
-            </button>
-            <button type="submit" class="flex justify-center items-center gap-2 font-bold btn-nav">
-                <i class="fa-solid fa-book-open"></i> Lesson-2
-            </button>
-            <button type="submit" class="flex justify-center items-center gap-2 font-bold btn-nav">
-                <i class="fa-solid fa-book-open"></i> Lesson-3
-            </button>
-            <button type="submit" class="flex justify-center items-center gap-2 font-bold btn-nav">
-                <i class="fa-solid fa-book-open"></i> Lesson-4
-            </button>
-            <button type="submit" class="flex justify-center items-center gap-2 font-bold btn-nav">
-                <i class="fa-solid fa-book-open"></i> Lesson-5
-            </button>
-            <button type="submit" class="flex justify-center items-center gap-2 font-bold btn-nav">
-                <i class="fa-solid fa-book-open"></i> Lesson-6
-            </button>
-            <button type="submit" class="flex justify-center items-center gap-2 font-bold btn-nav">
-                <i class="fa-solid fa-book-open"></i> Lesson-7
-            </button>
+        <div id="lessonContainer" class="flex space-x-4">
+
         </div>
-        <div id="lessons"
+        <div id="lessonContent"
             class="bg-gray-200 p-4 w-full h-auto rounded-lg flex flex-col justify-center items-center space-y-8 py-12">
             <h1>আপনি এখনো কোন Lesson Select করেন ন</h1>
             <h1 class="text-4xl">একটি Lesson Select করুন।</h1>
 
         </div>
+        <div id="lessonGrid" class="grid grid-cols-3 gap-4 w-full p-4 rounded-xl bg-gray-200 hidden">
+            <div class="bg-white p-16 rounded-lg flex flex-col justify-center items-center space-y-12">
+                <div class="flex flex-col justify-center items-center w-full space-y-2">
+                    <h1 class="text-2xl font-bold">Hello</h1>
+                    <h2 class="text-lg">Pdsfdf</h2>
+                    <h2 class="text-lg">fdfdf</h2>
+                </div>
+                <div class="flex justify-between items-center w-full">
+                    <a href="http://" class="bg-blue-100 p-4 rounded-lg">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                    </a>
+                    <a href="http://" class="bg-blue-200 p-4 rounded-lg">
+                        <i class="fa-solid fa-volume-high"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
     </section>
 
     <!-- Questions Section -->
-    <section id="faq" class="flex flex-col space-y-12 justify-center items-center mt-16 mb-16 py-4 px-16">
+    <section id="faqContainer" class="flex flex-col space-y-12 justify-center items-center mt-16 mb-16 py-4 px-16">
         <h1 class="text-4xl font-bold">
             <span class="text-blue-400">Frequently</span> Asked Questions
         </h1>
