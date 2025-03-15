@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.font-family {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: #333;
+}
+
+.nav-container{
+    border: 1px solid rgb(198, 189, 189);
+    background: linear-gradient(178deg, rgba(131, 127, 127, 0.3), rgba(0, 0, 0, 0));
+    /* background: linear-gradient(to bottom, red, blue); */
+
+}
+
+
+.btn-nav{
+    border: 1px solid rgb(66, 42, 213);
+    border-radius: 4px;
+    padding: 8px 16px;
+    color: rgb(66, 42, 213);
+}
+
+.btn-nav:hover{
+    background-color: rgb(66, 42, 213);
+   color: white;
+}
+
+.input-field{
+    border: 1px solid rgba(24, 24, 27, 0.2);
+border-radius: 4px;
+    padding: 8px 16px;
+    width: 50%;
+}
+
+#btn-started{
+    box-sizing: border-box;
+border: 1px solid rgb(61, 38, 199);
+border-radius: 4px;
+
+background: rgb(66, 42, 213);
+padding: 8px 16px;
+color: white;
+}
